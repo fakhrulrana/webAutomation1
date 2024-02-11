@@ -10,14 +10,13 @@ import pages.HomePage;
 
 import java.io.FileNotFoundException;
 import java.util.Properties;
-import java.util.concurrent.TimeUnit;
 
-public class VerifyHomePage {
+public class ViewLandingPage {
 
 
     WebDriver driver = (WebDriver) BaseClass.driversetUp();
 
-    public VerifyHomePage() throws FileNotFoundException {
+    public ViewLandingPage() throws FileNotFoundException {
     }
 
     @BeforeTest
@@ -32,10 +31,10 @@ public class VerifyHomePage {
     }
 
     @Test(priority = 1)
-    public void verifyHomePageTitle() {
+    public void viewLandingPage() {
 
         String title = new HomePage().getTitle(driver);
-        Assert.assertEquals(title, "Automation Exercise");
+        Assert.assertEquals(title, "STORE");
 
         try {
             Thread.sleep(3000);

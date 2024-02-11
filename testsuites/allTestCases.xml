@@ -6,7 +6,7 @@
 
 
         <classes>
-            <class name="test_cases.VerifyHomePage">
+            <class name="test_cases.ViewLandingPage">
             </class>
 
             <class name="test_cases.VerifyCartPage">
