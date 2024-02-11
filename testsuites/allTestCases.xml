@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true" name="F:/WORK/work/Automation/TestAutomation">
+
+
+
+        <classes>
+            <class name="test_cases.VerifyHomePage">
+            </class>
+
+            <class name="test_cases.VerifyCartPage">
+            </class>
+
+            <class name="test_cases.ProceedToCheckout">
+            </class>
+
+            <class name="test_cases.VerifyAccountReg">
+            </class>
+
+            <class name="test_cases.VerifyLoginWithUsername">
+            </class>
+
+        </classes>
+    </test>
+</suite>
