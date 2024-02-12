@@ -28,8 +28,16 @@
             <version>3.8.2</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>reportng</artifactId>
+            <version>1.2.2</version>
+            <scope>test</scope>
+        </dependency>
 
     </dependencies>
+
+
 
     <properties>
         <maven.compiler.source>11</maven.compiler.source>

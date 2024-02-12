@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="F:/WORK/work/Automation/TestAutomation"
+           tests="1"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="3.044">
+    <properties></properties>
+
+
+
+            <testcase
+                name="viewLandingPage"
+                time="3.044"
+                classname="test_cases.ViewLandingPage">
+            </testcase>
+</testsuite>
