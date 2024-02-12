@@ -9,17 +9,19 @@
             <class name="test_cases.ViewLandingPage">
             </class>
 
-            <class name="test_cases.VerifyCartPage">
+            <class name="test_cases.ViewCategoriesAndCount">
             </class>
 
-            <class name="test_cases.ProceedToCheckout">
-            </class>
-
-            <class name="test_cases.VerifyAccountReg">
+            <class name="test_cases.AccountReg">
             </class>
 
             <class name="test_cases.VerifyLoginWithUsername">
             </class>
+
+
+            <class name="test_cases.PurchasePhone">
+            </class>
+
 
         </classes>
     </test>

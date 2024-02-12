@@ -21,10 +21,6 @@ public class CategoryPage {
 
     By viewAllMonitorPath = By.xpath("/html/body/div[5]/div/div[2]/div");
 
-    By viewProduct = By.xpath("/html/body/section[2]/div/div/div[2]/div[1]/div[2]/div/div[2]/ul/li/a");
-    By checkOutBtn = By.xpath("//*[@id=\"do_action\"]/div[1]/div/div/a");
-
-    By getCheckoutText = By.xpath("//*[@id=\"checkoutModal\"]/div/div/div[1]/h4");
 
 
     public int viewAndCountPhonesCategory(WebDriver driver) {

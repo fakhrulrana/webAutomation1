@@ -1,5 +1,6 @@
 package pages;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -9,27 +10,81 @@ public class CartPage {
 
     WebDriver driver;
 
-    By cartButton= By.xpath("/html/body/section/div/div/div[2]/div[2]/div[2]/div/span/button");
-    By viewCartBtn= By.xpath("//*[@id=\"cartModal\"]/div/div/div[2]/p[2]/a/u");
+    By cartButton= By.cssSelector("a.btn");
+    By viewCartBtn= By.xpath("//*[@id=\"cartur\"]");
     By getQuantity=By.xpath("//*[@id=\"product-1\"]/td[4]/button");
 
-    By viewProduct=By.xpath("/html/body/section[2]/div/div/div[2]/div[1]/div[2]/div/div[2]/ul/li/a");
-    By checkOutBtn= By.xpath("//*[@id=\"do_action\"]/div[1]/div/div/a");
+    By viewProduct=By.xpath("/html/body/div[5]/div/div[2]/div/div[1]/div/div/h4/a");
+    By checkOutBtn= By.xpath("/html/body/div[6]/div/div[2]/button");
 
-    By getCheckoutText= By.xpath("//*[@id=\"checkoutModal\"]/div/div/div[1]/h4");
+    By getCheckoutText= By.xpath("/html/body/div[10]/h2");
 
+    By phoneCategoryPath = By.xpath("/html/body/div[5]/div/div[1]/div/a[2]");
+    By laptopCategoryPath = By.xpath("/html/body/div[5]/div/div[1]/div/a[3]");
+    By monitorCategoryPath = By.xpath("/html/body/div[5]/div/div[1]/div/a[4]");
+    By viewAllPhonePath = By.xpath("//*[@id='tbodyid']/div");
 
+    By namePath = By.xpath("//*[@id=\"name\"]");
+    By countryPath = By.xpath("//*[@id=\"country\"]");
+    By cityPath = By.xpath("//*[@id=\"city\"]");
 
+    By creditCardPath = By.xpath("//*[@id=\"card\"]");
+    By monthPath = By.xpath("//*[@id=\"month\"]");
+    By yearPath = By.xpath("//*[@id=\"year\"]");
+
+    By purchaseBtnPath = By.xpath("/html/body/div[3]/div/div/div[3]/button[2]");
+
+    By okBtn= By.xpath("/html/body/div[10]/div[7]/div/button");
+
+    public void viewAndCountPhonesCategory(WebDriver driver) {
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        driver.findElement(phoneCategoryPath).click();
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+    }
     public void viewProduct(WebDriver driver)
     {
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
         driver.findElement(viewProduct).click();
     }
     public void clickOnCartButton(WebDriver driver)
     {
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+
         driver.findElement(cartButton).click();
+
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+
+
+        Alert alertDialog = driver.switchTo().alert();
+
+// Get the alert text
+        String successTxt = alertDialog.getText();
+
+// Click the OK button on the alert.
+        alertDialog.accept();
     }
 
-    public String clickOnViewCartButton(WebDriver driver)
+    public void clickOnViewCartButton(WebDriver driver)
     {
         try {
             Thread.sleep(1000);
@@ -37,27 +92,42 @@ public class CartPage {
             throw new RuntimeException(e);
         }
         driver.findElement(viewCartBtn).click();
-        String noOfCart=driver.findElement(getQuantity).getText();
-        System.out.println("number of cart is " + noOfCart);
-        return noOfCart;
+
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
     }
 
-    public String clickOnCheckOut(WebDriver driver)
+    public String clickOnCheckOut(WebDriver driver,String fullName,String city,String country,String creditCard, String month,String year)
     {
-        CartPage crt= new CartPage();
-        crt.viewProduct(driver);
-        crt.clickOnCartButton(driver);
         try {
             Thread.sleep(1000);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
-        driver.findElement(viewCartBtn).click();
-
         driver.findElement(checkOutBtn).click();
+
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        driver.findElement(namePath).sendKeys(fullName);
+        driver.findElement(countryPath).sendKeys(country);
+        driver.findElement(cityPath).sendKeys(city);
+        driver.findElement(creditCardPath).sendKeys(creditCard);
+        driver.findElement(monthPath).sendKeys(month);
+        driver.findElement(yearPath).sendKeys(year);
+
+        driver.findElement(purchaseBtnPath).click();
+
         String textChkOut=driver.findElement(getCheckoutText).getText();
 
         System.out.println("check out text " + textChkOut);
+
+        driver.findElement(okBtn).click();
         return textChkOut;
     }
 

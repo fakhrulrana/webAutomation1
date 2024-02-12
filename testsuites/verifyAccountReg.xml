@@ -6,7 +6,7 @@
 
 
         <classes>
-            <class name="test_cases.VerifyAccountReg">
+            <class name="test_cases.AccountReg">
             </class>
 
         </classes>

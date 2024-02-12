@@ -6,20 +6,20 @@ import org.openqa.selenium.WebDriver;
 public class LoginPage {
 
     WebDriver driver;
-    By loginBtn = By.xpath("//*[@id=\"header\"]/div/div/div/div[2]/div/ul/li[4]/a");
-    By loginUserName = By.xpath("//*[@id=\"form\"]/div/div/div[1]/div/form/input[2]");
-    By passWordFld = By.xpath("//*[@id=\"form\"]/div/div/div[1]/div/form/input[3]");
-    By loginSubmitBtn = By.xpath("//*[@id=\"form\"]/div/div/div[1]/div/form/button");
-    By checkUserName = By.xpath("//*[@id=\"header\"]/div/div/div/div[2]/div/ul/li[10]/a/b");
+    By loginBtn = By.xpath("//*[@id=\"login2\"]");
+    By loginUserName = By.xpath("//*[@id=\"loginusername\"]");
+    By passWordFld = By.xpath("//*[@id=\"loginpassword\"]");
+    By loginSubmitBtn = By.xpath("/html/body/div[3]/div/div/div[3]/button[2]");
+    By checkUserName = By.cssSelector("#nameofuser");
 
 
     public void clickOnLoginButton(WebDriver driver) {
+        driver.findElement(loginBtn).click();
         try {
-            Thread.sleep(1000);
+            Thread.sleep(3000);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
-        driver.findElement(loginBtn).click();
     }
 
     public String loginWithValidData(WebDriver driver, String userName, String password) {

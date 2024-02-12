@@ -6,7 +6,7 @@
 
 
         <classes>
-            <class name="test_cases.ProceedToCheckout">
+            <class name="test_cases.PurchasePhone">
             </class>
 
         </classes>
