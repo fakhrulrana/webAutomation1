@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="F:/WORK/work/Automation/TestAutomation"
+           tests="3"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="21.840">
+    <properties></properties>
+
+
+
+            <testcase
+                name="viewLaptopCatergory"
+                time="7.253"
+                classname="test_cases.ViewCategoriesAndCount">
+            </testcase>
+            <testcase
+                name="viewMonitorCatergory"
+                time="7.211"
+                classname="test_cases.ViewCategoriesAndCount">
+            </testcase>
+            <testcase
+                name="viewPhoneCatergory"
+                time="7.376"
+                classname="test_cases.ViewCategoriesAndCount">
+            </testcase>
+</testsuite>

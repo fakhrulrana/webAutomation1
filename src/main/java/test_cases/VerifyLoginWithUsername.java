@@ -40,7 +40,7 @@ public class VerifyLoginWithUsername {
         LoginPage lg = new LoginPage();
         lg.clickOnLoginButton(driver);
         String getText = lg.loginWithValidData(driver, userName, passWord);
-        Assert.assertEquals(getText, "");
+        Assert.assertEquals(getText, "Welcome fakhrulcsedu@gmail.com");
 
     }
 

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="F:/WORK/work/Automation/TestAutomation"
+           tests="6"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="33.253">
+    <properties></properties>
+
+
+
+            <testcase
+                name="Login"
+                time="7.312"
+                classname="test_cases.PurchasePhone">
+            </testcase>
+            <testcase
+                name="viewPhoneCatergory"
+                time="4.076"
+                classname="test_cases.PurchasePhone">
+            </testcase>
+            <testcase
+                name="checkOutProduct"
+                time="8.810"
+                classname="test_cases.PurchasePhone">
+            </testcase>
+            <testcase
+                name="viewProduct"
+                time="2.161"
+                classname="test_cases.PurchasePhone">
+            </testcase>
+            <testcase
+                name="addToCart"
+                time="6.103"
+                classname="test_cases.PurchasePhone">
+            </testcase>
+            <testcase
+                name="viewTheCart"
+                time="4.791"
+                classname="test_cases.PurchasePhone">
+            </testcase>
+</testsuite>

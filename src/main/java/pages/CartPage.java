@@ -1,10 +1,12 @@
 package pages;
 
-import org.openqa.selenium.Alert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.*;
+import org.openqa.selenium.io.FileHandler;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.io.File;
+import java.io.IOException;
 
 public class CartPage {
 
@@ -35,6 +37,8 @@ public class CartPage {
     By purchaseBtnPath = By.xpath("/html/body/div[3]/div/div/div[3]/button[2]");
 
     By okBtn= By.xpath("/html/body/div[10]/div[7]/div/button");
+
+    By dashboard=By.xpath("/html/body/div[10]");
 
     public void viewAndCountPhonesCategory(WebDriver driver) {
         try {
@@ -124,6 +128,20 @@ public class CartPage {
         driver.findElement(purchaseBtnPath).click();
 
         String textChkOut=driver.findElement(getCheckoutText).getText();
+
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        WebElement element = driver.findElement(dashboard);
+
+        File source = ((TakesScreenshot)element).getScreenshotAs(OutputType.FILE);
+        try {
+            FileHandler.copy(source, new File("./screenshots/purchasePhone.png"));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
 
         System.out.println("check out text " + textChkOut);
 

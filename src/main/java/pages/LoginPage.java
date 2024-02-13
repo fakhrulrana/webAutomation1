@@ -1,7 +1,10 @@
 package pages;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.*;
+import org.openqa.selenium.io.FileHandler;
+
+import java.io.File;
+import java.io.IOException;
 
 public class LoginPage {
 
@@ -11,6 +14,8 @@ public class LoginPage {
     By passWordFld = By.xpath("//*[@id=\"loginpassword\"]");
     By loginSubmitBtn = By.xpath("/html/body/div[3]/div/div/div[3]/button[2]");
     By checkUserName = By.cssSelector("#nameofuser");
+
+    By dashboard= By.xpath("/html/body");
 
 
     public void clickOnLoginButton(WebDriver driver) {
@@ -32,6 +37,21 @@ public class LoginPage {
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
+
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        WebElement element = driver.findElement(dashboard);
+
+        File source = ((TakesScreenshot)element).getScreenshotAs(OutputType.FILE);
+        try {
+            FileHandler.copy(source, new File("./screenshots/VerifyLoginWithUsername.png"));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
         String textUserName = driver.findElement(checkUserName).getText();
 
         System.out.println("check user name text " + textUserName);
